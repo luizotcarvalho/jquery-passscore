@@ -1,14 +1,22 @@
 # jQuery PassScore
 
-### Give your passwords a score that they deserve
-
 So, you dont wanna your clients typing short and weak passwords? With jQuery PassScore you can do that in a fast and lightweight way! 
 
 ## Live
 
-See the [live] in the JsFiddle right now!
+See the [live preview] in the JsFiddle right now!
 
-[live]: http://jsfiddle.net/h6Ezt/ "live preview"
+[live preview]: http://jsfiddle.net/h6Ezt/ "live preview"
+
+## Overview & Features
+
+Be simple. That's the goal for the jQuery PassScore, here some incredibles features:
+
+* Uses border property by default to show the strength bar and don't mess with your layout
+* Smooth color effect when you're typing
+* Compatible with any browser
+* Don't need to import thousand of scripts and css, just the plugin itself
+* Build-in solidly with [Jquery Boilerplate](http://jqueryboilerplate.com)
 
 ## Usage
 
@@ -31,6 +39,31 @@ See the [live] in the JsFiddle right now!
 	```
 
 ## Options
+
+```javascript
+force: "weak" / "normal" / "strong" / "impossible"
+```
+By default "normal"
+
+```javascript
+pos: "top" / "right" / "bottom" / "left"
+```
+By default "bottom" 
+
+```javascript
+style: "solid" / "dashed" / "dotted"
+```
+By default "solid" 
+
+```javascript
+width: 0 - 4
+```
+By default 2
+
+```javascript
+showScore: false / true
+```
+By default false 
 
 ## Structure
 
@@ -60,9 +93,3 @@ The basic structure of the project is given in the following way:
 ├── Gruntfile.js
 └── package.json
 ```
-
-## Contributing
-
-## History
-
-## License
