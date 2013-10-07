@@ -6,6 +6,10 @@ So, you dont wanna your clients typing short and weak passwords? With jQuery Pas
 
 ## Live
 
+See the [live] in the JsFiddle right now!
+
+[live]: http://jsfiddle.net/h6Ezt/ "live preview"
+
 ## Usage
 
 1. Include jQuery:
