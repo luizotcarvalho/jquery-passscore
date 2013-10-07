@@ -38,16 +38,16 @@ The basic structure of the project is given in the following way:
 
 ```
 ├── demo/
-|		├── lib/
-|		│   └── bootstrap-3.0.0
-|		│       ├── css
-|		│       |    ├── bootstrap.min.css
-|		│       |    └── passscore.css
-|		│       └── fonts
-|		|            ├── glyphicons-halflings-regular.eot
-|		|            ├── glyphicons-halflings-regular.svg
-|		|            ├── glyphicons-halflings-regular.ttf
-|		│            └── glyphicons-halflings-regular.woff
+|   ├── lib/
+|   │   └── bootstrap-3.0.0
+|   │       ├── css
+|   │       |    ├── bootstrap.min.css
+|   │       |    └── passscore.css
+|   │       └── fonts
+|   |            ├── glyphicons-halflings-regular.eot
+|   |            ├── glyphicons-halflings-regular.svg
+|   |            ├── glyphicons-halflings-regular.ttf
+|   │            └── glyphicons-halflings-regular.woff
 │   └── index.html
 ├── dist/
 │   ├── jquery.passscore.js
