@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="jQuery PassScore - Give your passwords a score that they deserve">
+    <meta name="author" content="Luiz Ot Carvalho">
+
+    <title>Demo jQuery PassScore</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../lib/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../lib/bootstrap-3.0.0/css/passscore.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+    	<h1>jQuery PassScore</h1>
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please register</h2>
+        <input type="text" class="form-control" placeholder="Email address" autofocus>
+        <input id="pass" type="password" class="form-control" placeholder="Password">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+      </form>
+    </div> <!-- /container -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../dist/jquery.passscore.min.js"></script>
+    <script>
+      $(function(){
+        $("#pass").passScore({
+          force     :"strong",
+          showScore : true
+        }); 
+      });
+    </script>
+  </body>
+</html>
