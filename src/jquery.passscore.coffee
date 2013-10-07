@@ -26,32 +26,40 @@ do ($ = jQuery) ->
             @_defaults = defaults
             @_name = pluginName
             @init(el)
-            if @.settings.showScore then $(el).after(@.settings.scorePlaceholder)
+            $(el).after @.settings.scorePlaceholder if @.settings.showScore
 
         init : (el) ->
             self = @
 
             $(el).keyup ->
-                self.highlight(el)  
+                self.highlight el   
                 return
 
         highlight : (el) ->
             pass = $(el).val()
 
-            $(el).css("border-" + @settings.pos, @getValues(pass))
+            $(el).css "border-" + @settings.pos, @getValues(pass)
             return  
 
         getValues : (pass) ->
             len = pass.length
 
-            if len then @settings.width + " " + @settings.style + " rgb(" + @getColor(pass) + ")" else ""
+            if len 
+                @settings.width + " " + @settings.style + " rgb(" + @getColor(pass) + ")"
+            else
+                ""
 
         getColor : (pass) ->
             score = @getScore(pass)
 
-            if @.settings.showScore then @.settings.scorePlaceholder.text("Your password score is " + ( Math.round(score / 2 )) )
+            @.settings.scorePlaceholder.text "Your password score is " + Math.round(score / 2 ) if @.settings.showScore
 
-            if score >= 200 then r = 200 - score; g = 200 else r = 200; g = score
+            if score >= 200
+                r = 200 - score
+                g = 200
+            else
+                r = 200;
+                g = score
 
             color = r + "," + g + ", 0" 
 
@@ -59,7 +67,7 @@ do ($ = jQuery) ->
             score = 0
 
             score = (@checkString(/[a-z]/, pass) * @settings.alphaLowerScore) + (@checkString(/[A-Z]/, pass) * @settings.alphaUpperScore) + (@checkString(/[0-9]/, pass) * @settings.numericScore) + (@checkString(/(!|\$|%|@|#|&|\*|\^)/, pass) * @settings.symbolScore)
-            return score * (@settings.multiplier - @getForceDiff())
+            score * (@settings.multiplier - @getForceDiff())
 
         checkString : (regex, str) ->
             i = 0
@@ -69,15 +77,15 @@ do ($ = jQuery) ->
               count++  if str.charAt(i).match(regex)
               i++
 
-            return count 
+            count 
 
         getForceDiff : ->
 
             switch @settings.force
-              when "easy" then return -1
-              when "strong" then return 1
-              when "impossible" then return 2
-              else return 0
+              when "weak" then -1
+              when "strong" then 1
+              when "impossible" then 2
+              else 0
 
     $.fn[pluginName] = (options) ->
         @each ->

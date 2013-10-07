@@ -55,7 +55,7 @@
         var color, g, r, score;
         score = this.getScore(pass);
         if (this.settings.showScore) {
-          this.settings.scorePlaceholder.text("Your password score is " + (Math.round(score / 2)));
+          this.settings.scorePlaceholder.text("Your password score is " + Math.round(score / 2));
         }
         if (score >= 200) {
           r = 200 - score;
@@ -89,7 +89,7 @@
 
       Plugin.prototype.getForceDiff = function() {
         switch (this.settings.force) {
-          case "easy":
+          case "weak":
             return -1;
           case "strong":
             return 1;
